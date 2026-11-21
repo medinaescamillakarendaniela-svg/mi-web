@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f48fb1" />
+    <title>Aprende Jugando</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Iconos de Font Awesome (gratis, no necesitas cuenta) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="js/funciones.js" defer></script>
+</head>
+
+<body>
+    <header id="inicio">
+        <nav>
+            <section class="contenedor nav">
+                <div class="logo">
+                    <img src="IMG/CONTRO.IMG.svg" alt="Aprende Jugando" />
+                </div>
+                <div class="enlaces-header" id="enlaces">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#modulos">Módulos</a>
+                    <a href="#ingreso">Ingresar</a>
+                    <a href="#ayuda">Ayuda</a>
+                    <a href="#" id="linkSalir" class="oculto">Salir</a>
+                </div>
+                <!-- Boton hamburguesa: solo se ve en celular (ver @media en estilos.css) -->
+                <div class="hamburguer" id="botonMenu" role="button" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </section>
+        </nav>
+        <div class="contenedor">
+            <section class="contenido-header">
+                <section class="textos-header">
+                    <h1>Aprender jugando es más divertido</h1>
+                    <p>
+                        Juegos de inglés, matemáticas, sociales y lenguaje para tu colegio.
+                        Responde, gana puntos y aprende a tu ritmo.
+                    </p>
+                    <a href="#ingreso">Empezar</a>
+                </section>
+                <img src="IMG/CONEXION.IMG.svg" alt="" width="350px" height="450px" />
+            </section>
+        </div>
+    </header>
+
+    <!-- MODULOS -->
+    <section class="about-us" id="modulos">
+        <div class="contenedor1">
+            <h2 class="titulo">Elige un módulo y empieza a jugar</h2>
+            <div class="contenedor-servicio">
+                <div class="servicio">
+                    <i class="fas fa-language"></i>
+                    <h3>Inglés</h3>
+                    <p>Aprende vocabulario y frases básicas con preguntas rápidas y divertidas.</p>
+                    <a href="#" data-modulo="ingles">Jugar ---</a>
+                </div>
+
+                <div class="servicio">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Matemáticas</h3>
+                    <p>Practica sumas, restas y multiplicaciones. Las preguntas cambian cada vez.</p>
+                    <a href="#" data-modulo="matematicas">Jugar ---</a>
+                </div>
+
+                <div class="servicio">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Sociales</h3>
+                    <p>Descubre datos de Colombia: ríos, océanos, departamentos y más.</p>
+                    <a href="#" data-modulo="sociales">Jugar ---</a>
+                </div>
+
+                <div class="servicio">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Lenguaje</h3>
+                    <p>Mejora tu ortografía, sinónimos, antónimos y mucho más.</p>
+                    <a href="#" data-modulo="lenguaje">Jugar ---</a>
+                </div>
+
+                <div class="servicio">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Mi progreso</h3>
+                    <p>Mira cuántos puntos llevas y cuántos juegos has terminado.</p>
+                    <a href="#progreso">Ver ---</a>
+                </div>
+
+                <div class="servicio">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Ayuda</h3>
+                    <p>Aprende cómo ingresar, elegir un módulo y ganar puntos.</p>
+                    <a href="#ayuda">Leer más ---</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INGRESO Y REGISTRO -->
+    <section class="pregunta contenedor" id="ingreso">
+        <section class="textos-pregunta">
+            <h1 id="tituloIngreso">Ingresa para jugar</h1>
+
+            <!-- INGRESO -->
+            <div id="loginBox" class="caja-login">
+                <form id="formLogin">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" placeholder="Escribe tu usuario" />
+
+                    <label for="clave">Contraseña:</label>
+                    <input type="password" id="clave" placeholder="Escribe tu contraseña" />
+
+                    <button type="submit" class="boton">Ingresar</button>
+                    <p id="mensajeLogin" class="mensaje"></p>
+                </form>
+                <p class="pista">Usuarios de prueba: <b>estudiante</b> o <b>profesor</b> (clave: 1234)</p>
+                <p class="cambio-form">
+                    ¿No tienes cuenta?
+                    <button type="button" class="enlace-cambio" id="irRegistro">Regístrate aquí</button>
+                </p>
+            </div>
+
+            <!-- REGISTRO DE USUARIOS NUEVOS -->
+            <div id="registroBox" class="caja-login oculto">
+                <h3>Crear cuenta</h3>
+                <form id="formRegistro" novalidate>
+                    <label for="regNombre">Nombre completo:</label>
+                    <input type="text" id="regNombre" placeholder="Ej: Karen Medina" autocomplete="name" />
+
+                    <label for="regCorreo">Correo electrónico:</label>
+                    <input type="email" id="regCorreo" placeholder="Ej: karen@correo.com" autocomplete="email" />
+
+                    <label for="regUsuario">Usuario:</label>
+                    <input type="text" id="regUsuario" placeholder="Elige un usuario" autocomplete="username" />
+
+                    <label for="regClave">Contraseña:</label>
+                    <input type="password" id="regClave" placeholder="Mínimo 4 caracteres" autocomplete="new-password" />
+
+                    <label for="regClave2">Confirmar contraseña:</label>
+                    <input type="password" id="regClave2" placeholder="Repite la contraseña" autocomplete="new-password" />
+
+                    <button type="submit" class="boton">Registrarme</button>
+                    <p id="mensajeRegistro" class="mensaje"></p>
+                </form>
+                <p class="cambio-form">
+                    ¿Ya tienes cuenta?
+                    <button type="button" class="enlace-cambio" id="irLogin">Ingresa aquí</button>
+                </p>
+            </div>
+
+            <!-- BIENVENIDA (aparece al ingresar) -->
+            <div id="bienvenidaBox" class="caja-login oculto">
+                <h2>¡Hola, <span id="nombreUsuario"></span>!</h2>
+                <p>Ya puedes jugar. Elige un módulo para empezar a sumar puntos.</p>
+                <a href="#modulos">Ver módulos</a>
+            </div>
+        </section>
+        <img src="IMG/COMPUTO.IMG.svg" alt="" />
+    </section>
+
+    <!-- ZONA DE JUEGO (aparece al elegir un módulo) -->
+    <section class="zona-juego oculto" id="zonaJuego">
+        <div class="contenedor1">
+
+            <div id="pantallaJuego">
+                <h2 id="tituloModulo">Módulo</h2>
+                <p id="contadorPregunta"></p>
+                <div class="caja-pregunta">
+                    <h3 id="enunciado"></h3>
+                    <div id="opciones"></div>
+                    <p id="retroalimentacion" class="mensaje"></p>
+                    <button id="botonSiguiente" class="boton oculto">Siguiente</button>
+                </div>
+            </div>
+
+            <div id="pantallaResultado" class="oculto">
+                <h2>¡Terminaste!</h2>
+                <p id="textoResultado"></p>
+                <button id="botonRepetir" class="boton">Jugar otra vez</button>
+                <button id="botonCerrarJuego" class="boton boton-claro">Volver a módulos</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MI PROGRESO -->
+    <section class="resultados" id="progreso">
+        <div class="contenedor conten-resultados">
+            <section class="numbers">
+                <div class="number">
+                    <h4 id="datoPuntaje">0</h4>
+                    <p>Puntos acumulados</p>
+                </div>
+
+                <div class="number">
+                    <h4 id="datoJuegos">0</h4>
+                    <p>Juegos terminados</p>
+                </div>
+
+                <div class="number">
+                    <h4>+10</h4>
+                    <p>Puntos por cada respuesta correcta</p>
+                </div>
+
+                <div class="number">
+                    <h4>4</h4>
+                    <p>Módulos para aprender jugando</p>
+                </div>
+            </section>
+            <section class="results-text">
+                <h4>Mi progreso</h4>
+                <p>
+                    Usuario activo: <span id="datoUsuario">-</span>. Cada juego que termines
+                    queda guardado en este computador.
+                </p>
+                <a href="#modulos">Jugar ahora</a>
+            </section>
+        </div>
+    </section>
+
+    <!-- POR QUE APRENDER JUGANDO -->
+    <section class="contenedor1 serviciosd">
+        <img src="IMG/SENTADO.IMG.svg" alt="" />
+        <div class="box-skills">
+            <h4><i class="far fa-check-circle"></i> Juegos divertidos</h4>
+            <h4><i class="far fa-check-circle"></i> Cuatro módulos</h4>
+            <h4><i class="far fa-check-circle"></i> Puntaje por respuesta</h4>
+            <h4><i class="far fa-check-circle"></i> Progreso guardado</h4>
+            <h4><i class="far fa-check-circle"></i> Hecho para el colegio</h4>
+        </div>
+    </section>
+
+    <!-- AYUDA -->
+    <section class="about-us" id="ayuda">
+        <div class="contenedor1">
+            <h2 class="titulo">Ayuda</h2>
+            <ol class="lista-ayuda">
+                <li>Inicia sesión con tu usuario y contraseña.</li>
+                <li>Elige un módulo: inglés, matemáticas, sociales o lenguaje.</li>
+                <li>Responde las 5 preguntas. Cada acierto suma 10 puntos.</li>
+                <li>Al terminar verás tu resultado y podrás jugar otra vez.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <div class="partFooter">
+            <img src="IMG/SEÑOR_COMPU.IMG.svg" alt="" />
+        </div>
+        <div class="partFooter">
+            <h4>Módulos</h4>
+            <a href="#modulos">Inglés</a>
+            <a href="#modulos">Matemáticas</a>
+            <a href="#modulos">Sociales</a>
+        </div>
+        <div class="partFooter">
+            <h4>Acerca de</h4>
+            <a href="#inicio">Inicio</a>
+            <a href="#ingreso">Ingresar</a>
+            <a href="#ayuda">Ayuda</a>
+        </div>
+        <div class="partFooter">
+            <h4>Redes sociales</h4>
+            <div class="social-media">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </footer>
+    <p class="derechos">Aprende Jugando - Proyecto SENA &copy; <span id="anio"></span></p>
+
+</body>
+
+</html>
